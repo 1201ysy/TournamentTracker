@@ -66,7 +66,6 @@ namespace TrackerUI
             this.tournamentName.Size = new System.Drawing.Size(150, 50);
             this.tournamentName.TabIndex = 1;
             this.tournamentName.Text = "<none>";
-            this.tournamentName.Click += new System.EventHandler(this.label2_Click);
             // 
             // roundLabel
             // 
@@ -78,7 +77,6 @@ namespace TrackerUI
             this.roundLabel.Size = new System.Drawing.Size(94, 37);
             this.roundLabel.TabIndex = 2;
             this.roundLabel.Text = "Round";
-            this.roundLabel.Click += new System.EventHandler(this.roundLabel_Click);
             // 
             // roundDropDown
             // 
@@ -88,6 +86,7 @@ namespace TrackerUI
             this.roundDropDown.Size = new System.Drawing.Size(212, 33);
             this.roundDropDown.Sorted = true;
             this.roundDropDown.TabIndex = 3;
+            this.roundDropDown.SelectedIndexChanged += new System.EventHandler(this.roundDropDown_SelectedIndexChanged);
             // 
             // unplayedOnlyCheckbox
             // 
@@ -101,6 +100,7 @@ namespace TrackerUI
             this.unplayedOnlyCheckbox.TabIndex = 4;
             this.unplayedOnlyCheckbox.Text = "Unplayed Only";
             this.unplayedOnlyCheckbox.UseVisualStyleBackColor = true;
+            this.unplayedOnlyCheckbox.CheckedChanged += new System.EventHandler(this.unplayedOnlyCheckbox_CheckedChanged);
             // 
             // matchupListBox
             // 
@@ -111,6 +111,7 @@ namespace TrackerUI
             this.matchupListBox.Name = "matchupListBox";
             this.matchupListBox.Size = new System.Drawing.Size(321, 277);
             this.matchupListBox.TabIndex = 5;
+            this.matchupListBox.SelectedIndexChanged += new System.EventHandler(this.matchupListBox_SelectedIndexChanged);
             // 
             // teamOneName
             // 
@@ -122,7 +123,6 @@ namespace TrackerUI
             this.teamOneName.Size = new System.Drawing.Size(165, 37);
             this.teamOneName.TabIndex = 6;
             this.teamOneName.Text = "<team one>";
-            this.teamOneName.Click += new System.EventHandler(this.label1_Click);
             // 
             // teamTwoName
             // 
@@ -181,7 +181,6 @@ namespace TrackerUI
             this.versusLabel.Size = new System.Drawing.Size(91, 37);
             this.versusLabel.TabIndex = 12;
             this.versusLabel.Text = "- VS - ";
-            this.versusLabel.Click += new System.EventHandler(this.versusLabel_Click);
             // 
             // scoreButton
             // 
@@ -197,6 +196,7 @@ namespace TrackerUI
             this.scoreButton.TabIndex = 13;
             this.scoreButton.Text = "Score";
             this.scoreButton.UseVisualStyleBackColor = true;
+            this.scoreButton.Click += new System.EventHandler(this.scoreButton_Click);
             // 
             // TournamentViewerForm
             // 

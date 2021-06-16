@@ -35,6 +35,13 @@ namespace TrackerLibrary.Models
         {
 
         }
+        /// <summary>
+        /// Constructor for PrizeModel that accepts all strings and handle data type conversions correspondingly 
+        /// </summary>
+        /// <param name="placeName"></param>
+        /// <param name="placeNumber"></param>
+        /// <param name="prizeAmount"></param>
+        /// <param name="prizePercentage"></param>
         public PrizeModel (string placeName, string placeNumber, string prizeAmount, string prizePercentage)
         {
             PlaceName = placeName;

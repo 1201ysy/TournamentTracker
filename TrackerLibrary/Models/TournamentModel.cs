@@ -9,7 +9,18 @@ namespace TrackerLibrary.Models
     /// </summary>
     public class TournamentModel
     {
+        /// <summary>
+        /// Event for Tournament Complete
+        /// </summary>
+        public event EventHandler<DateTime> OnTournamentComplete;
 
+        /// <summary>
+        /// Method to start the event "Tournament Complete"
+        /// </summary>
+        public void CompleteTournament()
+        {
+            OnTournamentComplete?.Invoke(this, DateTime.Now);
+        }
         /// <summary>
         /// The unique identifier for the Tournament model.
         /// </summary>

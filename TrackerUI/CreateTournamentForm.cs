@@ -15,13 +15,17 @@ namespace TrackerUI
         List<TeamModel> availableTeams = GlobalConfig.Connection.GetTeam_All();
         List<TeamModel> selectedTeams = new List<TeamModel>();
         List<PrizeModel> selectedPrizes = new List<PrizeModel>();
-
+        /// <summary>
+        /// Inititalize Form
+        /// </summary>
         public CreateTournamentForm()
         {
             InitializeComponent();
             WireUpLists();
         }
-
+        /// <summary>
+        /// Wire up data with list
+        /// </summary>
         private void WireUpLists()
         {
             selectTeamDropDown.DataSource = null;
@@ -36,7 +40,11 @@ namespace TrackerUI
             prizesListBox.DataSource = selectedPrizes;
             prizesListBox.DisplayMember = "PlaceName";
         }
-
+        /// <summary>
+        /// Event handler for when Add Team button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addTeamButton_Click(object sender, EventArgs e)
         {
             TeamModel t = (TeamModel)selectTeamDropDown.SelectedItem;
@@ -129,7 +137,11 @@ namespace TrackerUI
                 WireUpLists();
             }
         }
-
+        /// <summary>
+        /// Event handler for when Create Tournament button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void createTournamentButton_Click(object sender, EventArgs e)
         {
 
@@ -145,22 +157,34 @@ namespace TrackerUI
                 model.Prizes = selectedPrizes;
                 model.EnteredTeams = selectedTeams;
 
+
+                // create matchups
+
+                // Order our list randomly of teams
+                // Check if it is big enough - if not, add in byes : 2^n power
+                // create first round of macthups
+                // create every round after that - filling in only parentMatchup, rounds
+
                 TournamentLogic.CreateRounds(model);
 
-                model = GlobalConfig.Connection.CreateTournament(model);
+                GlobalConfig.Connection.CreateTournament(model);
 
 
+                Console.WriteLine("Send emails");
+                //TournamentLogic.AlertUsersToNewRound(model);
+
+
+                TournamentViewerForm frm = new TournamentViewerForm(model);
+                frm.Show();
+                this.Close();
 
             }
-            // create matchups
-
-            // Order our list randomly of teams
-            // Check if it is big enough - if not, add in byes : 2^n power
-            // create first round of macthups
-            // create every round after that - filling in only parentMatchup, rounds
 
         }
-
+        /// <summary>
+        /// Validates data in the Create Tournament Form
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateForm()
         {
             decimal fee = 0;

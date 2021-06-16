@@ -31,6 +31,9 @@ namespace TrackerLibrary.Models
         /// </summary>
         public string CellphoneNumber { get; set; }
 
+        /// <summary>
+        /// FullName used to display on forms
+        /// </summary>
         public string FullName
         {
             get

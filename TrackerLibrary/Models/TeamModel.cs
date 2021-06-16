@@ -24,14 +24,5 @@ namespace TrackerLibrary.Models
         /// </summary>
         public List<PersonModel> TeamMembers { get; set; } = new List<PersonModel>();
 
-        /*
-         * same as above assignemnt
-         * but in older versions of C#, needed to create seperate constructor
-         * 
-        public TeamModel() // ctor > tab twice
-        {
-            TeamMember = new List<Person>();
-        }
-        */
     }
 }

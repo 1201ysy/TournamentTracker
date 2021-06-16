@@ -17,27 +17,43 @@ namespace TrackerLibrary
         public const string MatchupEntriesFile = "MatchupEntriesModel.csv";
         public static IDataConnection Connection { get; private set; }
 
-
+        /// <summary>
+        /// Connect to database db
+        /// </summary>
+        /// <param name="db"></param>
         public static void InitializeConnections(DatabaseType db)
         {
             if (db == DatabaseType.Sql)
             {
-                //TODO : Set up the SQL connection properly
                 SqlConnector sql = new SqlConnector();
                 Connection = sql;
             }
 
             else if (db == DatabaseType.TextFile)
             {
-                //TODO : Create the Text Connection
                 TextConnector text = new TextConnector();
                 Connection = text;
             }
         }
 
+        /// <summary>
+        /// Used to get connectionString information from App.config
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+
+        /// <summary>
+        /// Used to get AppSetting["key"] information from App.Config
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string AppKeyLookup(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
         }
 
     }

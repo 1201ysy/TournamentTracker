@@ -17,7 +17,10 @@ namespace TrackerUI
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
 
         ITeamRequester callingForm;
-
+        /// <summary>
+        /// Initialize Form
+        /// </summary>
+        /// <param name="caller"></param>
         public CreateTeamForm(ITeamRequester caller)
         {
             InitializeComponent();
@@ -95,7 +98,7 @@ namespace TrackerUI
                 model.EmailAddress = emailValue.Text;
                 model.CellphoneNumber = cellphoneValue.Text;
 
-                model = GlobalConfig.Connection.CreatePerson(model);
+                GlobalConfig.Connection.CreatePerson(model);
 
                 selectedTeamMembers.Add(model);
                 WireUpLists();
@@ -158,7 +161,7 @@ namespace TrackerUI
             model.TeamName = teamNameValue.Text;
             model.TeamMembers = selectedTeamMembers;
 
-            model = GlobalConfig.Connection.CreateTeam(model);
+            GlobalConfig.Connection.CreateTeam(model);
 
             callingForm.TeamComplete(model);
             this.Close();

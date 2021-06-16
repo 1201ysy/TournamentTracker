@@ -5,6 +5,9 @@ using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
+    /// <summary>
+    /// Interface to communicate between forms 
+    /// </summary>
     public interface IPrizeRequester
     {
         void PrizeComplete(PrizeModel model);
