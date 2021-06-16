@@ -36,16 +36,16 @@ namespace TrackerUI
             this.selectTeamMemberDropDown = new System.Windows.Forms.ComboBox();
             this.selectTeamMemberLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.firstNameValue = new System.Windows.Forms.TextBox();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameValue = new System.Windows.Forms.TextBox();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.emailValue = new System.Windows.Forms.TextBox();
-            this.emailLabel = new System.Windows.Forms.Label();
+            this.createMemberButton = new System.Windows.Forms.Button();
             this.cellphoneValue = new System.Windows.Forms.TextBox();
             this.cellphoneLabel = new System.Windows.Forms.Label();
-            this.createMemberButton = new System.Windows.Forms.Button();
-            this.deleteSelectedMemberButton = new System.Windows.Forms.Button();
+            this.emailValue = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.lastNameValue = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.firstNameValue = new System.Windows.Forms.TextBox();
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.removeSelectedMemberButton = new System.Windows.Forms.Button();
             this.prizesLabel = new System.Windows.Forms.Label();
             this.teamMembersListBox = new System.Windows.Forms.ListBox();
             this.createTeamButton = new System.Windows.Forms.Button();
@@ -95,6 +95,7 @@ namespace TrackerUI
             this.addMemeberButton.TabIndex = 31;
             this.addMemeberButton.Text = "Add Member";
             this.addMemeberButton.UseVisualStyleBackColor = true;
+            this.addMemeberButton.Click += new System.EventHandler(this.addMemeberButton_Click);
             // 
             // selectTeamMemberDropDown
             // 
@@ -137,44 +138,40 @@ namespace TrackerUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Member";
             // 
-            // firstNameValue
+            // createMemberButton
             // 
-            this.firstNameValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameValue.Location = new System.Drawing.Point(154, 49);
-            this.firstNameValue.Name = "firstNameValue";
-            this.firstNameValue.Size = new System.Drawing.Size(174, 39);
-            this.firstNameValue.TabIndex = 35;
-            this.firstNameValue.TextChanged += new System.EventHandler(this.firstNameValue_TextChanged);
+            this.createMemberButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.createMemberButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.createMemberButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.createMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.createMemberButton.Location = new System.Drawing.Point(90, 283);
+            this.createMemberButton.Name = "createMemberButton";
+            this.createMemberButton.Size = new System.Drawing.Size(156, 44);
+            this.createMemberButton.TabIndex = 33;
+            this.createMemberButton.Text = "Create Member";
+            this.createMemberButton.UseVisualStyleBackColor = true;
+            this.createMemberButton.Click += new System.EventHandler(this.createMemberButton_Click);
             // 
-            // firstNameLabel
+            // cellphoneValue
             // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.firstNameLabel.Location = new System.Drawing.Point(19, 52);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(129, 32);
-            this.firstNameLabel.TabIndex = 34;
-            this.firstNameLabel.Text = "First Name";
+            this.cellphoneValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cellphoneValue.Location = new System.Drawing.Point(154, 216);
+            this.cellphoneValue.Name = "cellphoneValue";
+            this.cellphoneValue.Size = new System.Drawing.Size(174, 39);
+            this.cellphoneValue.TabIndex = 41;
             // 
-            // lastNameValue
+            // cellphoneLabel
             // 
-            this.lastNameValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameValue.Location = new System.Drawing.Point(154, 106);
-            this.lastNameValue.Name = "lastNameValue";
-            this.lastNameValue.Size = new System.Drawing.Size(174, 39);
-            this.lastNameValue.TabIndex = 37;
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.lastNameLabel.Location = new System.Drawing.Point(19, 109);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(126, 32);
-            this.lastNameLabel.TabIndex = 36;
-            this.lastNameLabel.Text = "Last Name";
+            this.cellphoneLabel.AutoSize = true;
+            this.cellphoneLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cellphoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.cellphoneLabel.Location = new System.Drawing.Point(25, 216);
+            this.cellphoneLabel.Name = "cellphoneLabel";
+            this.cellphoneLabel.Size = new System.Drawing.Size(123, 32);
+            this.cellphoneLabel.TabIndex = 40;
+            this.cellphoneLabel.Text = "Cellphone";
             // 
             // emailValue
             // 
@@ -195,55 +192,59 @@ namespace TrackerUI
             this.emailLabel.TabIndex = 38;
             this.emailLabel.Text = "Email";
             // 
-            // cellphoneValue
+            // lastNameValue
             // 
-            this.cellphoneValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cellphoneValue.Location = new System.Drawing.Point(154, 216);
-            this.cellphoneValue.Name = "cellphoneValue";
-            this.cellphoneValue.Size = new System.Drawing.Size(174, 39);
-            this.cellphoneValue.TabIndex = 41;
+            this.lastNameValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameValue.Location = new System.Drawing.Point(154, 106);
+            this.lastNameValue.Name = "lastNameValue";
+            this.lastNameValue.Size = new System.Drawing.Size(174, 39);
+            this.lastNameValue.TabIndex = 37;
             // 
-            // cellphoneLabel
+            // lastNameLabel
             // 
-            this.cellphoneLabel.AutoSize = true;
-            this.cellphoneLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cellphoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.cellphoneLabel.Location = new System.Drawing.Point(25, 216);
-            this.cellphoneLabel.Name = "cellphoneLabel";
-            this.cellphoneLabel.Size = new System.Drawing.Size(123, 32);
-            this.cellphoneLabel.TabIndex = 40;
-            this.cellphoneLabel.Text = "Cellphone";
-            this.cellphoneLabel.Click += new System.EventHandler(this.cellphoneNuberLabel_Click);
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.lastNameLabel.Location = new System.Drawing.Point(19, 109);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(126, 32);
+            this.lastNameLabel.TabIndex = 36;
+            this.lastNameLabel.Text = "Last Name";
             // 
-            // createMemberButton
+            // firstNameValue
             // 
-            this.createMemberButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.createMemberButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.createMemberButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.createMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createMemberButton.Location = new System.Drawing.Point(90, 283);
-            this.createMemberButton.Name = "createMemberButton";
-            this.createMemberButton.Size = new System.Drawing.Size(156, 44);
-            this.createMemberButton.TabIndex = 33;
-            this.createMemberButton.Text = "Create Member";
-            this.createMemberButton.UseVisualStyleBackColor = true;
+            this.firstNameValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameValue.Location = new System.Drawing.Point(154, 49);
+            this.firstNameValue.Name = "firstNameValue";
+            this.firstNameValue.Size = new System.Drawing.Size(174, 39);
+            this.firstNameValue.TabIndex = 35;
             // 
-            // deleteSelectedMemberButton
+            // firstNameLabel
             // 
-            this.deleteSelectedMemberButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.deleteSelectedMemberButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.deleteSelectedMemberButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.deleteSelectedMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteSelectedMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteSelectedMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.deleteSelectedMemberButton.Location = new System.Drawing.Point(773, 365);
-            this.deleteSelectedMemberButton.Name = "deleteSelectedMemberButton";
-            this.deleteSelectedMemberButton.Size = new System.Drawing.Size(116, 72);
-            this.deleteSelectedMemberButton.TabIndex = 36;
-            this.deleteSelectedMemberButton.Text = "Delete Selected";
-            this.deleteSelectedMemberButton.UseVisualStyleBackColor = true;
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.firstNameLabel.Location = new System.Drawing.Point(19, 52);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(129, 32);
+            this.firstNameLabel.TabIndex = 34;
+            this.firstNameLabel.Text = "First Name";
+            // 
+            // removeSelectedMemberButton
+            // 
+            this.removeSelectedMemberButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.removeSelectedMemberButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.removeSelectedMemberButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.removeSelectedMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeSelectedMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.removeSelectedMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.removeSelectedMemberButton.Location = new System.Drawing.Point(773, 365);
+            this.removeSelectedMemberButton.Name = "removeSelectedMemberButton";
+            this.removeSelectedMemberButton.Size = new System.Drawing.Size(116, 72);
+            this.removeSelectedMemberButton.TabIndex = 36;
+            this.removeSelectedMemberButton.Text = "Remove Selected";
+            this.removeSelectedMemberButton.UseVisualStyleBackColor = true;
+            this.removeSelectedMemberButton.Click += new System.EventHandler(this.removeSelectedMemberButton_Click);
             // 
             // prizesLabel
             // 
@@ -280,7 +281,7 @@ namespace TrackerUI
             this.createTeamButton.TabIndex = 42;
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = true;
-            this.createTeamButton.Click += new System.EventHandler(this.createTournamentButton_Click);
+            this.createTeamButton.Click += new System.EventHandler(this.createTeamButton_Click);
             // 
             // CreateTeamForm
             // 
@@ -289,7 +290,7 @@ namespace TrackerUI
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(901, 820);
             this.Controls.Add(this.createTeamButton);
-            this.Controls.Add(this.deleteSelectedMemberButton);
+            this.Controls.Add(this.removeSelectedMemberButton);
             this.Controls.Add(this.prizesLabel);
             this.Controls.Add(this.teamMembersListBox);
             this.Controls.Add(this.groupBox1);
@@ -301,7 +302,7 @@ namespace TrackerUI
             this.Controls.Add(this.headerLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "CreateTeamForm";
             this.Text = "Create Team";
             this.groupBox1.ResumeLayout(false);
@@ -329,7 +330,7 @@ namespace TrackerUI
         private System.Windows.Forms.TextBox firstNameValue;
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.Button createMemberButton;
-        private System.Windows.Forms.Button deleteSelectedMemberButton;
+        private System.Windows.Forms.Button removeSelectedMemberButton;
         private System.Windows.Forms.Label prizesLabel;
         private System.Windows.Forms.ListBox teamMembersListBox;
         private System.Windows.Forms.Button createTeamButton;

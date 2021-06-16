@@ -17,14 +17,16 @@ namespace TrackerUI
         [STAThread]
         static void Main()
         {
-            // Initialize the database connection
-            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
-
+            
+        
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new CreatePrizeForm());
+            // Initialize the database connection
+            TrackerLibrary.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+
+            Application.Run(new CreateTournamentForm());
             //Application.Run(new TournamentDashboardForm());
         }
     }
